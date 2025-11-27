@@ -1,0 +1,31 @@
+
+services:
+  mockserver:
+    image: mockserver/mockserver:latest
+    container_name: mockserver
+    environment:
+      MOCKSERVER_SERVER_PORT: 1080
+      MOCKSERVER_PROPERTY_FILE: /config/mockserver.properties
+      MOCKSERVER_INITIALIZATION_JSON_PATH: /config/initializerJson.json
+    ports:
+      - "1080:1080"
+    volumes:
+      - ./config:/config
+      - ./libs:/libs
+    command: -logLevel INFO
+
+  admin:
+    build: 
+      context: ./backend
+      args:
+        HTTP_PROXY: http://192.168.41.110:7893
+        HTTPS_PROXY: http://192.168.41.110:7893
+    container_name: mockserver-admin
+    environment:
+      MOCKSERVER_HOST: mockserver
+      MOCKSERVER_PORT: 1080
+      PORT: 3000
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mockserver

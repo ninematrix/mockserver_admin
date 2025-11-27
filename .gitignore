@@ -1,0 +1,6 @@
+prompt.md
+folder.txt
+**/*.log
+**/*.tmp
+.DS_Store
+**/*.bak
