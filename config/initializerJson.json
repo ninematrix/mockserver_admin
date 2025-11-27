@@ -2,34 +2,27 @@
   {
     "httpRequest": {
       "method": "POST",
-      "path": "/yxhis/Exam/getLISList"
+      "path": "/yxhis/Exam/getLISList",
+      "body": {
+        "type": "JSON",
+        "json": {
+          "beginDate": "2024-01-01",
+          "patCardNo": "513030196105293814",
+          "endDate": "2024-12-31"
+        }
+      }
     },
     "httpResponse": {
       "statusCode": 200,
       "headers": {
-        "Content-Type": ["application/json; charset=utf-8"]
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ]
       },
       "body": {
         "code": 200,
         "message": "成功",
         "data": [
-          {
-            "inspectId": "",
-            "inspectName": "静脉采血费(门)",
-            "inspectTime": "2024-11-23 08:49:46.0",
-            "reportType": "门诊",
-            "inspectStatus": "3",
-            "reportTime": "null",
-            "examTime": "null",
-            "deptCode": "507",
-            "deptName": "肾病内科",
-            "doctorCode": "",
-            "doctorName": "",
-            "exeDeptCode": "15",
-            "exeDeptName": "检验科",
-            "reporter": "null",
-            "auditor": "null"
-          },
           {
             "inspectId": "0005689903=2024-11-23 10:46:36.0=0008352672=3892244-JY0008352672=2",
             "inspectName": "糖化血红蛋白测定(色变谱法)",
@@ -39,7 +32,7 @@
             "reportTime": "2024-11-23 10:46:36.0",
             "examTime": "2024-11-23 10:46:27.0",
             "deptCode": "507",
-            "deptName": "肾病内科",
+            "deptName": "神经内科",
             "doctorCode": "",
             "doctorName": "",
             "exeDeptCode": "15",
@@ -56,7 +49,7 @@
             "reportTime": "2024-11-23 11:07:11.0",
             "examTime": "2024-11-23 11:06:59.0",
             "deptCode": "507",
-            "deptName": "肾病内科",
+            "deptName": "神经内科",
             "doctorCode": "",
             "doctorName": "",
             "exeDeptCode": "15",
@@ -65,7 +58,7 @@
             "auditor": "黄飞"
           },
           {
-            "inspectId": "0005690085=2024-11-23 11:07:11.0=0008352672=3891709-JY0008352672=2",
+            "inspectId": "0005690085=2024-11-23 11:07:11.0=0008352672=3891710-JY0008352672=2",
             "inspectName": "肝功9项",
             "inspectTime": "2024-11-23 08:49:30.0",
             "reportType": "门诊",
@@ -73,7 +66,7 @@
             "reportTime": "2024-11-23 11:07:11.0",
             "examTime": "2024-11-23 11:06:59.0",
             "deptCode": "507",
-            "deptName": "肾病内科",
+            "deptName": "神经内科",
             "doctorCode": "",
             "doctorName": "",
             "exeDeptCode": "15",
@@ -82,7 +75,7 @@
             "auditor": "黄飞"
           },
           {
-            "inspectId": "0005690085=2024-11-23 11:07:11.0=0008352672=3891709-JY0008352672=2",
+            "inspectId": "0005690085=2024-11-23 11:07:11.0=0008352672=3891711-JY0008352672=2",
             "inspectName": "肾功3项测定",
             "inspectTime": "2024-11-23 08:49:30.0",
             "reportType": "门诊",
@@ -90,7 +83,7 @@
             "reportTime": "2024-11-23 11:07:11.0",
             "examTime": "2024-11-23 11:06:59.0",
             "deptCode": "507",
-            "deptName": "肾病内科",
+            "deptName": "神经内科",
             "doctorCode": "",
             "doctorName": "",
             "exeDeptCode": "15",
@@ -99,7 +92,7 @@
             "auditor": "黄飞"
           },
           {
-            "inspectId": "0005690085=2024-11-23 11:07:11.0=0008352672=3891709-JY0008352672=2",
+            "inspectId": "0005690085=2024-11-23 11:07:11.0=0008352672=3891712-JY0008352672=2",
             "inspectName": "空腹葡萄糖测定",
             "inspectTime": "2024-11-23 08:49:30.0",
             "reportType": "门诊",
@@ -107,7 +100,7 @@
             "reportTime": "2024-11-23 11:07:11.0",
             "examTime": "2024-11-23 11:06:59.0",
             "deptCode": "507",
-            "deptName": "肾病内科",
+            "deptName": "神经内科",
             "doctorCode": "",
             "doctorName": "",
             "exeDeptCode": "15",
@@ -124,7 +117,7 @@
             "reportTime": "2024-11-23 10:02:54.0",
             "examTime": "2024-11-23 10:02:44.0",
             "deptCode": "507",
-            "deptName": "肾病内科",
+            "deptName": "神经内科",
             "doctorCode": "",
             "doctorName": "",
             "exeDeptCode": "15",
@@ -141,12 +134,70 @@
   {
     "httpRequest": {
       "method": "POST",
-      "path": "/yxhis/Exam/getLISDetail"
+      "path": "/yxhis/Exam/getLISDetail",
+      "body": {
+        "type": "JSON",
+        "json": {
+          "inspectId": "0005689903=2024-11-23 10:46:36.0=0008352672=3892244-JY0008352672=2"
+        }
+      }
     },
     "httpResponse": {
       "statusCode": 200,
       "headers": {
-        "Content-Type": ["application/json; charset=utf-8"]
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ]
+      },
+      "body": {
+        "code": 200,
+        "message": "成功",
+        "data": [
+          {
+            "inspectId": "0005689903",
+            "patientName": "吴华",
+            "sex": "男",
+            "age": "63岁",
+            "documentNo": "2412053325",
+            "auditDoctorName": "黄飞",
+            "inspectName": "糖化血红蛋白测定(色变谱法)",
+            "deptName": "神经内科",
+            "doctorName": "孙勇",
+            "inspectTime": "2024-11-23 08:49:30.0",
+            "reportTime": "2024-11-23 10:46:36.0",
+            "items": [
+              {
+                "itemName": "*糖化血红蛋白(HbA1c)",
+                "result": "7.2",
+                "refRange": "4.0 - 6.0",
+                "unit": "%",
+                "abnormal": "1"
+              }
+            ]
+          }
+        ],
+        "executeTime": 0,
+        "timestamp": "2024-11-25 16:45:31"
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/yxhis/Exam/getLISDetail",
+      "body": {
+        "type": "JSON",
+        "json": {
+          "inspectId": "0005690085=2024-11-23 11:07:11.0=0008352672=3891709-JY0008352672=2"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ]
       },
       "body": {
         "code": 200,
@@ -159,24 +210,95 @@
             "age": "63岁",
             "documentNo": "2412053325",
             "auditDoctorName": "黄飞",
-            "inspectName": "",
-            "deptName": "null",
+            "inspectName": "血脂4项",
+            "deptName": "神经内科",
             "doctorName": "孙勇",
-            "inspectTime": "2024-11-23 09:51:41",
+            "inspectTime": "2024-11-23 08:49:30.0",
+            "reportTime": "2024-11-23 11:07:11.0",
+            "items": [
+              {
+                "itemName": "*总胆固醇",
+                "result": "5.41",
+                "refRange": "≤5.2",
+                "unit": "mmol/L",
+                "abnormal": "1"
+              },
+              {
+                "itemName": "*甘油三酯",
+                "result": "1.84",
+                "refRange": "≤1.7",
+                "unit": "mmol/L",
+                "abnormal": "1"
+              },
+              {
+                "itemName": "*高密度脂蛋白胆固醇",
+                "result": "1.20",
+                "refRange": "≥1.0",
+                "unit": "mmol/L",
+                "abnormal": "0"
+              },
+              {
+                "itemName": "*低密度脂蛋白胆固醇",
+                "result": "3.15",
+                "refRange": "≤3.12",
+                "unit": "mmol/L",
+                "abnormal": "1"
+              }
+            ]
+          }
+        ],
+        "executeTime": 0,
+        "timestamp": "2024-11-25 16:45:31"
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/yxhis/Exam/getLISDetail",
+      "body": {
+        "type": "JSON",
+        "json": {
+          "inspectId": "0005690085=2024-11-23 11:07:11.0=0008352672=3891710-JY0008352672=2"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ]
+      },
+      "body": {
+        "code": 200,
+        "message": "成功",
+        "data": [
+          {
+            "inspectId": "0005690085",
+            "patientName": "吴华",
+            "sex": "男",
+            "age": "63岁",
+            "documentNo": "2412053325",
+            "auditDoctorName": "黄飞",
+            "inspectName": "肝功9项",
+            "deptName": "神经内科",
+            "doctorName": "孙勇",
+            "inspectTime": "2024-11-23 08:49:30.0",
             "reportTime": "2024-11-23 11:07:11.0",
             "items": [
               {
                 "itemName": "*谷丙转氨酶",
                 "result": "14",
                 "refRange": "0 - 50",
-                "unit": "U/L       ",
+                "unit": "U/L",
                 "abnormal": "0"
               },
               {
                 "itemName": "*谷草转氨酶",
                 "result": "14",
                 "refRange": "0 - 40",
-                "unit": "U/L       ",
+                "unit": "U/L",
                 "abnormal": "0"
               },
               {
@@ -190,21 +312,21 @@
                 "itemName": "*总蛋白",
                 "result": "77.5",
                 "refRange": "65 - 85",
-                "unit": "g/L       ",
+                "unit": "g/L",
                 "abnormal": "0"
               },
               {
                 "itemName": "*白蛋白",
                 "result": "49.9",
                 "refRange": "40 - 55",
-                "unit": "g/L       ",
+                "unit": "g/L",
                 "abnormal": "0"
               },
               {
                 "itemName": "球蛋白",
                 "result": "27.6",
                 "refRange": "20 - 40",
-                "unit": "g/L       ",
+                "unit": "g/L",
                 "abnormal": "0"
               },
               {
@@ -218,106 +340,263 @@
                 "itemName": "*总胆红素",
                 "result": "9.7",
                 "refRange": "0 - 26",
-                "unit": "μmol/L   ",
+                "unit": "μmol/L",
                 "abnormal": "0"
               },
               {
                 "itemName": "*直接胆红素",
                 "result": "3.0",
                 "refRange": "0 - 8",
-                "unit": "μmol/L   ",
+                "unit": "μmol/L",
                 "abnormal": "0"
               },
               {
                 "itemName": "间接胆红素",
                 "result": "6.7",
                 "refRange": "0 - 18",
-                "unit": "μmol/L   ",
+                "unit": "μmol/L",
                 "abnormal": "0"
               },
               {
                 "itemName": "*碱性磷酸酶",
                 "result": "62",
                 "refRange": "45 - 125",
-                "unit": "U/L       ",
+                "unit": "U/L",
                 "abnormal": "0"
               },
               {
                 "itemName": "*γ-谷氨酰转移酶",
                 "result": "47",
                 "refRange": "10 - 60",
-                "unit": "U/L       ",
+                "unit": "U/L",
                 "abnormal": "0"
               },
               {
                 "itemName": "5-核苷酸酶",
                 "result": "6",
                 "refRange": "0 - 10",
-                "unit": "U/L       ",
+                "unit": "U/L",
                 "abnormal": "0"
-              },
+              }
+            ]
+          }
+        ],
+        "executeTime": 0,
+        "timestamp": "2024-11-25 16:45:31"
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/yxhis/Exam/getLISDetail",
+      "body": {
+        "type": "JSON",
+        "json": {
+          "inspectId": "0005690085=2024-11-23 11:07:11.0=0008352672=3891711-JY0008352672=2"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ]
+      },
+      "body": {
+        "code": 200,
+        "message": "成功",
+        "data": [
+          {
+            "inspectId": "0005690085",
+            "patientName": "吴华",
+            "sex": "男",
+            "age": "63岁",
+            "documentNo": "2412053325",
+            "auditDoctorName": "黄飞",
+            "inspectName": "肾功3项测定",
+            "deptName": "神经内科",
+            "doctorName": "孙勇",
+            "inspectTime": "2024-11-23 08:49:30.0",
+            "reportTime": "2024-11-23 11:07:11.0",
+            "items": [
               {
                 "itemName": "*尿素",
                 "result": "6.5",
                 "refRange": "2.7 - 8.2",
-                "unit": "mmol/L    ",
+                "unit": "mmol/L",
                 "abnormal": "0"
               },
               {
                 "itemName": "*肌酐",
                 "result": "72",
                 "refRange": "42 - 115",
-                "unit": "μmol/L   ",
+                "unit": "μmol/L",
                 "abnormal": "0"
               },
               {
                 "itemName": "*尿酸",
                 "result": "286",
                 "refRange": "208 - 428",
-                "unit": "μmol/L   ",
+                "unit": "μmol/L",
                 "abnormal": "0"
               },
               {
                 "itemName": "估算肾小球滤过率",
                 "result": "98.90",
                 "refRange": "80 - 125,适用范围:18-70岁",
-                "unit": "ml/min    ",
+                "unit": "ml/min",
                 "abnormal": "0"
-              },
+              }
+            ]
+          }
+        ],
+        "executeTime": 0,
+        "timestamp": "2024-11-25 16:45:31"
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/yxhis/Exam/getLISDetail",
+      "body": {
+        "type": "JSON",
+        "json": {
+          "inspectId": "0005690085=2024-11-23 11:07:11.0=0008352672=3891712-JY0008352672=2"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ]
+      },
+      "body": {
+        "code": 200,
+        "message": "成功",
+        "data": [
+          {
+            "inspectId": "0005690085",
+            "patientName": "吴华",
+            "sex": "男",
+            "age": "63岁",
+            "documentNo": "2412053325",
+            "auditDoctorName": "黄飞",
+            "inspectName": "空腹葡萄糖测定",
+            "deptName": "神经内科",
+            "doctorName": "孙勇",
+            "inspectTime": "2024-11-23 08:49:30.0",
+            "reportTime": "2024-11-23 11:07:11.0",
+            "items": [
               {
                 "itemName": "*空腹葡萄糖",
                 "result": "7.01",
                 "refRange": "3.89 - 6.1",
-                "unit": "mmol/L    ",
+                "unit": "mmol/L",
                 "abnormal": "1"
-              },
+              }
+            ]
+          }
+        ],
+        "executeTime": 0,
+        "timestamp": "2024-11-25 16:45:31"
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/yxhis/Exam/getLISDetail",
+      "body": {
+        "type": "JSON",
+        "json": {
+          "inspectId": "0005689559=2024-11-23 10:02:54.0=0008352690=3891737-JY0008352690=2"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": [
+          "application/json; charset=utf-8"
+        ]
+      },
+      "body": {
+        "code": 200,
+        "message": "成功",
+        "data": [
+          {
+            "inspectId": "0005689559",
+            "patientName": "吴华",
+            "sex": "男",
+            "age": "63岁",
+            "documentNo": "2412053325",
+            "auditDoctorName": "李静英",
+            "inspectName": "血常规五分类",
+            "deptName": "神经内科",
+            "doctorName": "孙勇",
+            "inspectTime": "2024-11-23 08:49:38.0",
+            "reportTime": "2024-11-23 10:02:54.0",
+            "items": [
               {
-                "itemName": "*总胆固醇",
-                "result": "5.41",
-                "refRange": "≤5.2",
-                "unit": "mmol/L    ",
-                "abnormal": "1"
-              },
-              {
-                "itemName": "*甘油三酯",
-                "result": "1.84",
-                "refRange": "≤1.7",
-                "unit": "mmol/L    ",
-                "abnormal": "1"
-              },
-              {
-                "itemName": "*高密度脂蛋白胆固醇",
-                "result": "1.20",
-                "refRange": "≥1.0",
-                "unit": "mmol/L    ",
+                "itemName": "*白细胞计数(WBC)",
+                "result": "6.8",
+                "refRange": "3.5 - 9.5",
+                "unit": "10^9/L",
                 "abnormal": "0"
               },
               {
-                "itemName": "*低密度脂蛋白胆固醇",
-                "result": "3.15",
-                "refRange": "≤3.12",
-                "unit": "mmol/L    ",
-                "abnormal": "1"
+                "itemName": "*红细胞计数(RBC)",
+                "result": "4.60",
+                "refRange": "4.30 - 5.80",
+                "unit": "10^12/L",
+                "abnormal": "0"
+              },
+              {
+                "itemName": "*血红蛋白(HGB)",
+                "result": "145",
+                "refRange": "130 - 175",
+                "unit": "g/L",
+                "abnormal": "0"
+              },
+              {
+                "itemName": "红细胞压积(HCT)",
+                "result": "0.43",
+                "refRange": "0.40 - 0.50",
+                "unit": "",
+                "abnormal": "0"
+              },
+              {
+                "itemName": "平均红细胞体积(MCV)",
+                "result": "93.5",
+                "refRange": "82 - 100",
+                "unit": "fL",
+                "abnormal": "0"
+              },
+              {
+                "itemName": "*血小板计数(PLT)",
+                "result": "210",
+                "refRange": "125 - 350",
+                "unit": "10^9/L",
+                "abnormal": "0"
+              },
+              {
+                "itemName": "中性粒细胞百分比(NEUT%)",
+                "result": "58.0",
+                "refRange": "40 - 75",
+                "unit": "%",
+                "abnormal": "0"
+              },
+              {
+                "itemName": "淋巴细胞百分比(LYMPH%)",
+                "result": "32.0",
+                "refRange": "20 - 50",
+                "unit": "%",
+                "abnormal": "0"
               }
             ]
           }

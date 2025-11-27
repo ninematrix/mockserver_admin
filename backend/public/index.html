@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
   <meta charset="UTF-8" />
   <title>MockServer 管理后台</title>
@@ -11,81 +12,102 @@
       display: flex;
       height: 100vh;
     }
+
     .sidebar {
       width: 320px;
       padding: 16px;
       border-right: 1px solid #ddd;
       box-sizing: border-box;
     }
+
     .main {
       flex: 1;
       padding: 16px;
       box-sizing: border-box;
       overflow: auto;
     }
-    h1, h2 {
+
+    h1,
+    h2 {
       margin: 0 0 12px;
       font-size: 18px;
     }
+
     label {
       display: block;
       margin-top: 8px;
       font-size: 13px;
     }
-    input, select, textarea, button {
+
+    input,
+    select,
+    textarea,
+    button {
       width: 100%;
       box-sizing: border-box;
       margin-top: 4px;
       padding: 6px 8px;
       font-size: 13px;
     }
+
     textarea {
       height: 120px;
       resize: vertical;
     }
+
     button {
       margin-top: 12px;
       cursor: pointer;
     }
+
     .row {
       display: flex;
       gap: 16px;
     }
-    .row > div {
+
+    .row>div {
       flex: 1;
     }
+
     table {
       width: 100%;
       border-collapse: collapse;
       margin-top: 8px;
       font-size: 12px;
     }
-    th, td {
+
+    th,
+    td {
       border: 1px solid #ddd;
       padding: 4px 6px;
       text-align: left;
       vertical-align: top;
     }
+
     th {
       background: #f5f5f5;
     }
+
     pre {
       background: #f8f8f8;
       padding: 8px;
       font-size: 12px;
       overflow: auto;
     }
+
     .btn-danger {
       background: #e74c3c;
       color: #fff;
       border: none;
     }
+
     .btn-primary {
       background: #3498db;
       color: #fff;
       border: none;
     }
-        #health-indicator {
+
+    #health-indicator {
       display: flex;
       align-items: center;
       gap: 6px;
@@ -93,21 +115,27 @@
       font-size: 12px;
       color: #555;
     }
+
     .health-dot {
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: #bdc3c7; /* 默认灰色，未知状态 */
-    }
-    .health-dot.healthy {
-      background: #2ecc71; /* 绿，正常 */
-    }
-    .health-dot.unhealthy {
-      background: #e74c3c; /* 红，异常 */
+      background: #bdc3c7;
+      /* 默认灰色，未知状态 */
     }
 
+    .health-dot.healthy {
+      background: #2ecc71;
+      /* 绿，正常 */
+    }
+
+    .health-dot.unhealthy {
+      background: #e74c3c;
+      /* 红，异常 */
+    }
   </style>
 </head>
+
 <body>
   <div class="sidebar">
     <h1>MockServer 管理</h1>
@@ -170,12 +198,32 @@
       </div>
       <div>
         <h2>最近请求日志</h2>
-        <button id="refresh-logs">刷新</button>
+
+        <div style="margin-bottom: 8px;">
+          <label>
+            按 Path 过滤：
+            <input type="text" id="log-path-filter" placeholder="/yxhis/Exam/getLISList" />
+          </label>
+        </div>
+
+        <div style="margin-bottom: 8px;">
+          <button id="refresh-logs">刷新</button>
+        </div>
+
         <div id="logs"></div>
+
+        <div id="logs-pagination" style="margin-top: 8px; display: flex; align-items: center; gap: 8px;">
+          <button id="logs-prev">上一页</button>
+          <span id="logs-page-info"></span>
+          <button id="logs-next">下一页</button>
+        </div>
       </div>
+
+
     </div>
   </div>
 
   <script src="./main.js"></script>
 </body>
+
 </html>

@@ -130,6 +130,7 @@ app.delete('/api/expectations', async (req, res) => {
 // body: 空对象 {}
 // -----------------------------------------------------------------------------
 app.delete('/api/expectations/all', async (_req, res) => {
+  console.log(`/api/expectations/all called, resetting expectations`);
   try {
     await axios.put(
       `${mockServerBase}/mockserver/reset`,
@@ -145,24 +146,45 @@ app.delete('/api/expectations/all', async (_req, res) => {
     res.status(500).json({ error: 'Failed to reset expectations' });
   }
 });
-
 // -----------------------------------------------------------------------------
-// 获取最近请求（记录的 REQUESTS，用于“最近请求日志”）
-// MockServer: PUT /mockserver/retrieve?type=REQUESTS[&format=JSON]
-// body: request matcher，这里用 {}，表示不过滤
+// 日志：获取「请求 + 响应 + 时间」
+// MockServer: PUT /mockserver/retrieve?type=REQUEST_RESPONSES[&format=JSON]
+// 返回 LogEventRequestAndResponse[]，包含 timestamp / httpRequest / httpResponse
 // -----------------------------------------------------------------------------
 app.get('/api/logs', async (_req, res) => {
+  console.log(`/api/logs called, retrieving from ${mockServerBase}`);
   try {
     const response = await axios.put(
-      `${mockServerBase}/mockserver/retrieve?type=REQUESTS&format=JSON`,
-      {}, // 空 matcher，表示取所有记录请求
+      `${mockServerBase}/mockserver/retrieve?type=REQUEST_RESPONSES&format=JSON`,
+      {}, // 空 matcher，表示不过滤
       { headers: { 'Content-Type': 'application/json' } }
     );
 
-    res.json(response.data || []);
+    const arr = Array.isArray(response.data) ? response.data : [];
+
+    // 统一成前端好用的扁平结构
+    const normalized = arr.map(item => {
+      const httpRequest = item.httpRequest || item.request || {};
+      const httpResponse = item.httpResponse || item.response || {};
+      return {
+        timestamp: item.timestamp || null,
+        method: httpRequest.method || '',
+        path: httpRequest.path || '',
+        requestHeaders: httpRequest.headers || {},
+        requestBody: httpRequest.body || null,
+        responseStatusCode:
+          httpResponse.statusCode !== undefined
+            ? httpResponse.statusCode
+            : null,
+        responseHeaders: httpResponse.headers || {},
+        responseBody: httpResponse.body || null
+      };
+    });
+
+    res.json(normalized);
   } catch (err) {
     console.error(
-      'Retrieve log error:',
+      'Retrieve REQUEST_RESPONSES error:',
       err?.response?.data || err.message
     );
     res.status(500).json({
@@ -172,11 +194,13 @@ app.get('/api/logs', async (_req, res) => {
   }
 });
 
+
 // -----------------------------------------------------------------------------
 // 健康检查：检查 MockServer 是否正常
 // MockServer: PUT /mockserver/status   （官方推荐健康探针接口）
 // -----------------------------------------------------------------------------
 app.get('/api/health', async (_req, res) => {
+  console.log(`/api/health called, checking MockServer at ${mockServerBase}`);
   try {
     const response = await axios.put(
       `${mockServerBase}/mockserver/status`,
