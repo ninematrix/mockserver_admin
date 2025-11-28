@@ -4,3 +4,4 @@ folder.txt
 **/*.tmp
 .DS_Store
 **/*.bak
+demo/*

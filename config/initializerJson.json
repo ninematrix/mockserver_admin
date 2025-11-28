@@ -1,4 +1,5 @@
 [
+
   {
     "httpRequest": {
       "method": "POST",
@@ -15,9 +16,7 @@
     "httpResponse": {
       "statusCode": 200,
       "headers": {
-        "Content-Type": [
-          "application/json; charset=utf-8"
-        ]
+        "Content-Type": ["application/json; charset=utf-8"]
       },
       "body": {
         "code": 200,
@@ -145,9 +144,7 @@
     "httpResponse": {
       "statusCode": 200,
       "headers": {
-        "Content-Type": [
-          "application/json; charset=utf-8"
-        ]
+        "Content-Type": ["application/json; charset=utf-8"]
       },
       "body": {
         "code": 200,
@@ -195,9 +192,7 @@
     "httpResponse": {
       "statusCode": 200,
       "headers": {
-        "Content-Type": [
-          "application/json; charset=utf-8"
-        ]
+        "Content-Type": ["application/json; charset=utf-8"]
       },
       "body": {
         "code": 200,
@@ -266,9 +261,7 @@
     "httpResponse": {
       "statusCode": 200,
       "headers": {
-        "Content-Type": [
-          "application/json; charset=utf-8"
-        ]
+        "Content-Type": ["application/json; charset=utf-8"]
       },
       "body": {
         "code": 200,
@@ -400,9 +393,7 @@
     "httpResponse": {
       "statusCode": 200,
       "headers": {
-        "Content-Type": [
-          "application/json; charset=utf-8"
-        ]
+        "Content-Type": ["application/json; charset=utf-8"]
       },
       "body": {
         "code": 200,
@@ -471,9 +462,7 @@
     "httpResponse": {
       "statusCode": 200,
       "headers": {
-        "Content-Type": [
-          "application/json; charset=utf-8"
-        ]
+        "Content-Type": ["application/json; charset=utf-8"]
       },
       "body": {
         "code": 200,
@@ -521,9 +510,7 @@
     "httpResponse": {
       "statusCode": 200,
       "headers": {
-        "Content-Type": [
-          "application/json; charset=utf-8"
-        ]
+        "Content-Type": ["application/json; charset=utf-8"]
       },
       "body": {
         "code": 200,
@@ -605,5 +592,1050 @@
         "timestamp": "2024-11-25 16:45:31"
       }
     }
+  },
+{
+  "httpRequest": {
+    "method": "POST",
+    "path": "/case/queryexamine",
+    "body": {
+      "type": "JSON",
+      "json": {
+        "hospitalNo": "4008802411",
+        "patientId": "56345345",
+        "visitId": "1222",
+        "reportNo": ""
+      }
+    }
+  },
+  "httpResponse": {
+    "statusCode": 200,
+    "headers": {
+      "Content-Type": ["application/json; charset=utf-8"]
+    },
+    "body": {
+      "code": 200,
+      "message": "成功",
+      "data": [
+        {
+          "errCode": 0,
+          "errMsg": "OK",
+          "data": {
+            "hospitalNo": "4008802411",
+            "hospitalName": "嘉和医院",
+            "patientName": "张三",
+            "patientAge": "67",
+            "sex": "男",
+            "reportName": "泌尿系彩色多普勒超声检查",
+            "checkTime": "2021-08-01 00:00:00",
+            "imageAccNo": "US2108010020",
+            "reportResult": "双肾形态、大小正常，肾内结构清晰，双肾盂及输尿管无扩张。膀胱充盈一般，其内未探及异常回声。经腹部扫查：前列腺横径4.3cm，上下径3.5cm，前后径3.3cm，未突入膀胱，内腺大小3.0×2.2cm。前列腺外形轮廓清晰，回声欠均匀。",
+            "reportImpression": "前列腺增大",
+            "kdsj": "2023-01-01 00:11:11",
+            "patientId": "0001111",
+            "visitType": "门诊",
+            "visitDept": "急诊科",
+            "visitDateTime": "2023-01-01 00:00:01",
+            "checkNo": "1232211",
+            "clinSymp": "尿频，尿急",
+            "reportDateTime": "2023-01-02 08:12:21",
+            "reportDoctor": "李丰",
+            "reviewDoctor": "李莎莎",
+            "clinicDiagnosis": "",
+            "bedLabel": "",
+            "requestDoctor": "李莎莎",
+            "reportClass": "超声",
+            "examMethodName": "",
+            "reqDept": "B超室",
+            "msrNo": "",
+            "partFirstClassName": "腹部",
+            "noteInfo": "",
+            "electronicHealthCard": "00012121",
+            "visitNo": "00012121",
+            "diagnosis": "前列腺增生",
+            "spcmReceivedDateTime": "2023-12-12 01:12:12",
+            "labPerformedTime": "2023-12-12 01:23:23"
+          }
+        }
+      ],
+      "executeTime": 0,
+      "timestamp": "2024-11-25 16:45:31"
+    }
   }
-]
+}
+,
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/er/Exam/getCheckList",
+      "body": {
+        "type": "JSON",
+        "json": {
+          "deptCode": "3201",
+          "patientNo": "BA20250001",
+          "inHospNo": "ZY202500123",
+          "visitsNum": "1"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": ["application/json; charset=utf-8"]
+      },
+      "body": {
+        "code": "200",
+        "msg": "成功",
+        "data": [
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "CT20251128001",
+            "reportName": "头颅CT平扫报告",
+            "reportDate": "2025-11-28 10:32:00",
+            "reportStatus": "F",
+            "itemCode": "CTHEADNC",
+            "itemName": "头颅CT平扫",
+            "applyDoctor": "李强",
+            "applyDept": "神经内科",
+            "applyDate": "2025-11-28 09:55:00",
+            "examinationDoctor": "王锋",
+            "examinationDept": "放射科",
+            "examinationDate": "2025-11-28 10:10:00",
+            "reviewDoctor": "赵明",
+            "orderCode": "ORD20251128001",
+            "reportMemo": "急性脑卒中疑诊，需结合临床及后续影像随访。"
+          },
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "ECG20251128002",
+            "reportName": "12导联心电图报告",
+            "reportDate": "2025-11-28 09:40:00",
+            "reportStatus": "F",
+            "itemCode": "ECG12",
+            "itemName": "十二导联心电图",
+            "applyDoctor": "李强",
+            "applyDept": "神经内科",
+            "applyDate": "2025-11-28 09:20:00",
+            "examinationDoctor": "周蕾",
+            "examinationDept": "心电图室",
+            "examinationDate": "2025-11-28 09:30:00",
+            "reviewDoctor": "陈伟",
+            "orderCode": "ORD20251128002",
+            "reportMemo": "心律失常，建议心内科会诊及抗凝风险评估。"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/er/Exam/getCheckDetail",
+      "body": {
+        "type": "JSON",
+        "json": {
+          "deptCode": "3201",
+          "applyNo": "CT20251128001",
+          "itemCode": "CTHEADNC"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": ["application/json; charset=utf-8"]
+      },
+      "body": {
+        "code": "200",
+        "msg": "成功",
+        "data": [
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "CT20251128001",
+            "itemCode": "CTHEADNC",
+            "itemName": "头颅CT平扫",
+            "examinationResult": "平扫示：右侧大脑中动脉供血区可见大片状低密度影，边界尚不清，右侧脑沟变浅，脑室系统轻度受压，左向中线结构约2mm移位。未见明显颅内出血高密度影。颅骨形态及密度未见明显异常。",
+            "examinationFinding": "1. 右侧大脑中动脉供血区急性/亚急性脑梗死可能性大。\n2. 轻度脑水肿及轻度中线结构左偏。\n建议结合临床症状、MRI及随访影像进一步评估。",
+            "viewSite": "http://pacs.example.com/viewer?study=CT20251128001",
+            "examinationMemo": "急性脑卒中疑诊，已通知床旁医师评估溶栓/介入治疗适应证。"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/er/Exam/getCheckDetail",
+      "body": {
+        "type": "JSON",
+        "json": {
+          "deptCode": "3201",
+          "applyNo": "ECG20251128002",
+          "itemCode": "ECG12"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": ["application/json; charset=utf-8"]
+      },
+      "body": {
+        "code": "200",
+        "msg": "成功",
+        "data": [
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "ECG20251128002",
+            "itemCode": "ECG12",
+            "itemName": "十二导联心电图",
+            "examinationResult": "心电图示：基线可见细小f波，P波未见清晰形成，各导联R-R间期明显不规则，心室率约90次/分，QRS 波群形态及时限基本正常，ST-T 未见明显动态性改变。",
+            "examinationFinding": "心房颤动（房颤），心室率控制尚可。\n未见急性心肌缺血明确证据。",
+            "viewSite": "http://pacs.example.com/ecg/view?study=ECG20251128002",
+            "examinationMemo": "房颤为脑卒中危险因素之一，建议心内科会诊，评估抗凝及心率控制治疗方案。"
+          }
+        ]
+      }
+    }
+  }
+,
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/er/Exam/getLisList",
+      "body": {
+        "type": "JSON",
+        "json": {
+          "deptCode": "3201",
+          "patientNo": "BA20250001",
+          "inHospNo": "ZY202500123",
+          "visitsNum": "1"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": ["application/json; charset=utf-8"]
+      },
+      "body": {
+        "code": "200",
+        "msg": "成功",
+        "data": [
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128001",
+            "paritemNo": "EMCBC",
+            "paritemName": "急诊血常规",
+            "specimenNo": "SP20251128001",
+            "specimenCode": "WB",
+            "specimen": "静脉全血",
+            "specimenTypes": "血液",
+            "specimenStatus": "1",
+            "requireDate": "2025-11-28 09:15:00",
+            "applyDept": "神经内科",
+            "samplingDate": "2025-11-28 09:18:00",
+            "submitDate": "2025-11-28 09:22:00",
+            "receivedDate": "2025-11-28 09:25:00",
+            "reportDateTime": "2025-11-28 09:32:00",
+            "isValid": "F",
+            "samplingFlag": "1",
+            "labMemo": "急性脑卒中疑诊，急查血常规。",
+            "microFlag": "0",
+            "orderNo": "1001",
+            "orderSubNo": "1",
+            "orderCode": "ORDLAB20251128001",
+            "orderText": "急诊血常规",
+            "submitDoctor": "李强"
+          },
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128002",
+            "paritemNo": "EMCOAG4",
+            "paritemName": "急诊凝血功能四项",
+            "specimenNo": "SP20251128002",
+            "specimenCode": "CITP",
+            "specimen": "枸橼酸钠抗凝血",
+            "specimenTypes": "血液",
+            "specimenStatus": "1",
+            "requireDate": "2025-11-28 09:15:00",
+            "applyDept": "神经内科",
+            "samplingDate": "2025-11-28 09:18:00",
+            "submitDate": "2025-11-28 09:22:00",
+            "receivedDate": "2025-11-28 09:26:00",
+            "reportDateTime": "2025-11-28 09:35:00",
+            "isValid": "F",
+            "samplingFlag": "1",
+            "labMemo": "评估静脉溶栓禁忌证，急查凝血功能。",
+            "microFlag": "0",
+            "orderNo": "1002",
+            "orderSubNo": "1",
+            "orderCode": "ORDLAB20251128002",
+            "orderText": "急诊凝血功能四项",
+            "submitDoctor": "李强"
+          },
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128003",
+            "paritemNo": "EMBIOCHEM",
+            "paritemName": "急诊生化全项",
+            "specimenNo": "SP20251128003",
+            "specimenCode": "SER",
+            "specimen": "静脉血清",
+            "specimenTypes": "血液",
+            "specimenStatus": "1",
+            "requireDate": "2025-11-28 09:15:00",
+            "applyDept": "神经内科",
+            "samplingDate": "2025-11-28 09:18:00",
+            "submitDate": "2025-11-28 09:22:00",
+            "receivedDate": "2025-11-28 09:28:00",
+            "reportDateTime": "2025-11-28 09:40:00",
+            "isValid": "F",
+            "samplingFlag": "1",
+            "labMemo": "急性脑卒中评估，急查血糖、电解质及肝肾功能、血脂。",
+            "microFlag": "0",
+            "orderNo": "1003",
+            "orderSubNo": "1",
+            "orderCode": "ORDLAB20251128003",
+            "orderText": "急诊生化全项",
+            "submitDoctor": "李强"
+          }
+        ]
+      }
+    }
+  },
+
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/er/Exam/getLisDetail",
+      "body": {
+        "type": "JSON",
+        "json": {
+          "applyNo": "LAB20251128001",
+          "paritemNo": "EMCBC"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": ["application/json; charset=utf-8"]
+      },
+      "body": {
+        "code": "200",
+        "msg": "成功",
+        "data": [
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128001",
+            "paritemNo": "EMCBC",
+            "paritemName": "急诊血常规",
+            "reportDateTime": "2025-11-28 09:32:00",
+            "specimenNo": "SP20251128001",
+            "lisItemCode": "WBC",
+            "lisItemName": "白细胞计数",
+            "lisItemSname": "WBC",
+            "result": "11.2",
+            "units": "10^9/L",
+            "resultRange": "3.5 - 9.5",
+            "status": "H",
+            "note": "",
+            "printOrder": "1",
+            "itemNo": "1",
+            "itemImg": "",
+            "criticalValueFlag": "0",
+            "criticalRange": "",
+            "criticalLevel": ""
+          },
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128001",
+            "paritemNo": "EMCBC",
+            "paritemName": "急诊血常规",
+            "reportDateTime": "2025-11-28 09:32:00",
+            "specimenNo": "SP20251128001",
+            "lisItemCode": "NEUTP",
+            "lisItemName": "中性粒细胞百分比",
+            "lisItemSname": "NEUT%",
+            "result": "78.0",
+            "units": "%",
+            "resultRange": "40.0 - 75.0",
+            "status": "H",
+            "note": "",
+            "printOrder": "2",
+            "itemNo": "2",
+            "itemImg": "",
+            "criticalValueFlag": "0",
+            "criticalRange": "",
+            "criticalLevel": ""
+          },
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128001",
+            "paritemNo": "EMCBC",
+            "paritemName": "急诊血常规",
+            "reportDateTime": "2025-11-28 09:32:00",
+            "specimenNo": "SP20251128001",
+            "lisItemCode": "LYMPHP",
+            "lisItemName": "淋巴细胞百分比",
+            "lisItemSname": "LYMPH%",
+            "result": "15.0",
+            "units": "%",
+            "resultRange": "20.0 - 50.0",
+            "status": "L",
+            "note": "",
+            "printOrder": "3",
+            "itemNo": "3",
+            "itemImg": "",
+            "criticalValueFlag": "0",
+            "criticalRange": "",
+            "criticalLevel": ""
+          },
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128001",
+            "paritemNo": "EMCBC",
+            "paritemName": "急诊血常规",
+            "reportDateTime": "2025-11-28 09:32:00",
+            "specimenNo": "SP20251128001",
+            "lisItemCode": "RBC",
+            "lisItemName": "红细胞计数",
+            "lisItemSname": "RBC",
+            "result": "4.60",
+            "units": "10^12/L",
+            "resultRange": "4.30 - 5.80",
+            "status": "N",
+            "note": "",
+            "printOrder": "4",
+            "itemNo": "4",
+            "itemImg": "",
+            "criticalValueFlag": "0",
+            "criticalRange": "",
+            "criticalLevel": ""
+          },
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128001",
+            "paritemNo": "EMCBC",
+            "paritemName": "急诊血常规",
+            "reportDateTime": "2025-11-28 09:32:00",
+            "specimenNo": "SP20251128001",
+            "lisItemCode": "HGB",
+            "lisItemName": "血红蛋白",
+            "lisItemSname": "HGB",
+            "result": "142",
+            "units": "g/L",
+            "resultRange": "130 - 175",
+            "status": "N",
+            "note": "",
+            "printOrder": "5",
+            "itemNo": "5",
+            "itemImg": "",
+            "criticalValueFlag": "0",
+            "criticalRange": "",
+            "criticalLevel": ""
+          },
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128001",
+            "paritemNo": "EMCBC",
+            "paritemName": "急诊血常规",
+            "reportDateTime": "2025-11-28 09:32:00",
+            "specimenNo": "SP20251128001",
+            "lisItemCode": "PLT",
+            "lisItemName": "血小板计数",
+            "lisItemSname": "PLT",
+            "result": "225",
+            "units": "10^9/L",
+            "resultRange": "125 - 350",
+            "status": "N",
+            "note": "",
+            "printOrder": "6",
+            "itemNo": "6",
+            "itemImg": "",
+            "criticalValueFlag": "0",
+            "criticalRange": "",
+            "criticalLevel": ""
+          }
+        ]
+      }
+    }
+  },
+
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/er/Exam/getLisDetail",
+      "body": {
+        "type": "JSON",
+        "json": {
+          "applyNo": "LAB20251128002",
+          "paritemNo": "EMCOAG4"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": ["application/json; charset=utf-8"]
+      },
+      "body": {
+        "code": "200",
+        "msg": "成功",
+        "data": [
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128002",
+            "paritemNo": "EMCOAG4",
+            "paritemName": "急诊凝血功能四项",
+            "reportDateTime": "2025-11-28 09:35:00",
+            "specimenNo": "SP20251128002",
+            "lisItemCode": "PT",
+            "lisItemName": "凝血酶原时间",
+            "lisItemSname": "PT",
+            "result": "12.5",
+            "units": "s",
+            "resultRange": "11.0 - 14.0",
+            "status": "N",
+            "note": "",
+            "printOrder": "1",
+            "itemNo": "1",
+            "itemImg": "",
+            "criticalValueFlag": "0",
+            "criticalRange": "",
+            "criticalLevel": ""
+          },
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128002",
+            "paritemNo": "EMCOAG4",
+            "paritemName": "急诊凝血功能四项",
+            "reportDateTime": "2025-11-28 09:35:00",
+            "specimenNo": "SP20251128002",
+            "lisItemCode": "INR",
+            "lisItemName": "国际标准化比值",
+            "lisItemSname": "INR",
+            "result": "1.05",
+            "units": "",
+            "resultRange": "0.80 - 1.20",
+            "status": "N",
+            "note": "",
+            "printOrder": "2",
+            "itemNo": "2",
+            "itemImg": "",
+            "criticalValueFlag": "0",
+            "criticalRange": "",
+            "criticalLevel": ""
+          },
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128002",
+            "paritemNo": "EMCOAG4",
+            "paritemName": "急诊凝血功能四项",
+            "reportDateTime": "2025-11-28 09:35:00",
+            "specimenNo": "SP20251128002",
+            "lisItemCode": "APTT",
+            "lisItemName": "活化部分凝血活酶时间",
+            "lisItemSname": "APTT",
+            "result": "31.2",
+            "units": "s",
+            "resultRange": "25.0 - 35.0",
+            "status": "N",
+            "note": "",
+            "printOrder": "3",
+            "itemNo": "3",
+            "itemImg": "",
+            "criticalValueFlag": "0",
+            "criticalRange": "",
+            "criticalLevel": ""
+          },
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128002",
+            "paritemNo": "EMCOAG4",
+            "paritemName": "急诊凝血功能四项",
+            "reportDateTime": "2025-11-28 09:35:00",
+            "specimenNo": "SP20251128002",
+            "lisItemCode": "FIB",
+            "lisItemName": "纤维蛋白原",
+            "lisItemSname": "FIB",
+            "result": "3.0",
+            "units": "g/L",
+            "resultRange": "2.0 - 4.0",
+            "status": "N",
+            "note": "",
+            "printOrder": "4",
+            "itemNo": "4",
+            "itemImg": "",
+            "criticalValueFlag": "0",
+            "criticalRange": "",
+            "criticalLevel": ""
+          }
+        ]
+      }
+    }
+  },
+
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/er/Exam/getLisDetail",
+      "body": {
+        "type": "JSON",
+        "json": {
+          "applyNo": "LAB20251128003",
+          "paritemNo": "EMBIOCHEM"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": ["application/json; charset=utf-8"]
+      },
+      "body": {
+        "code": "200",
+        "msg": "成功",
+        "data": [
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128003",
+            "paritemNo": "EMBIOCHEM",
+            "paritemName": "急诊生化全项",
+            "reportDateTime": "2025-11-28 09:40:00",
+            "specimenNo": "SP20251128003",
+            "lisItemCode": "GLU",
+            "lisItemName": "血糖",
+            "lisItemSname": "GLU",
+            "result": "11.2",
+            "units": "mmol/L",
+            "resultRange": "3.90 - 6.10",
+            "status": "H",
+            "note": "",
+            "printOrder": "1",
+            "itemNo": "1",
+            "itemImg": "",
+            "criticalValueFlag": "0",
+            "criticalRange": "",
+            "criticalLevel": ""
+          },
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128003",
+            "paritemNo": "EMBIOCHEM",
+            "paritemName": "急诊生化全项",
+            "reportDateTime": "2025-11-28 09:40:00",
+            "specimenNo": "SP20251128003",
+            "lisItemCode": "UREA",
+            "lisItemName": "尿素",
+            "lisItemSname": "UREA",
+            "result": "5.8",
+            "units": "mmol/L",
+            "resultRange": "2.7 - 8.2",
+            "status": "N",
+            "note": "",
+            "printOrder": "2",
+            "itemNo": "2",
+            "itemImg": "",
+            "criticalValueFlag": "0",
+            "criticalRange": "",
+            "criticalLevel": ""
+          },
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128003",
+            "paritemNo": "EMBIOCHEM",
+            "paritemName": "急诊生化全项",
+            "reportDateTime": "2025-11-28 09:40:00",
+            "specimenNo": "SP20251128003",
+            "lisItemCode": "CREA",
+            "lisItemName": "肌酐",
+            "lisItemSname": "CREA",
+            "result": "88",
+            "units": "μmol/L",
+            "resultRange": "57 - 111",
+            "status": "N",
+            "note": "",
+            "printOrder": "3",
+            "itemNo": "3",
+            "itemImg": "",
+            "criticalValueFlag": "0",
+            "criticalRange": "",
+            "criticalLevel": ""
+          },
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128003",
+            "paritemNo": "EMBIOCHEM",
+            "paritemName": "急诊生化全项",
+            "reportDateTime": "2025-11-28 09:40:00",
+            "specimenNo": "SP20251128003",
+            "lisItemCode": "NA",
+            "lisItemName": "血钠",
+            "lisItemSname": "Na+",
+            "result": "138",
+            "units": "mmol/L",
+            "resultRange": "137 - 147",
+            "status": "N",
+            "note": "",
+            "printOrder": "4",
+            "itemNo": "4",
+            "itemImg": "",
+            "criticalValueFlag": "0",
+            "criticalRange": "",
+            "criticalLevel": ""
+          },
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128003",
+            "paritemNo": "EMBIOCHEM",
+            "paritemName": "急诊生化全项",
+            "reportDateTime": "2025-11-28 09:40:00",
+            "specimenNo": "SP20251128003",
+            "lisItemCode": "K",
+            "lisItemName": "血钾",
+            "lisItemSname": "K+",
+            "result": "3.7",
+            "units": "mmol/L",
+            "resultRange": "3.5 - 5.3",
+            "status": "N",
+            "note": "",
+            "printOrder": "5",
+            "itemNo": "5",
+            "itemImg": "",
+            "criticalValueFlag": "0",
+            "criticalRange": "",
+            "criticalLevel": ""
+          },
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128003",
+            "paritemNo": "EMBIOCHEM",
+            "paritemName": "急诊生化全项",
+            "reportDateTime": "2025-11-28 09:40:00",
+            "specimenNo": "SP20251128003",
+            "lisItemCode": "ALT",
+            "lisItemName": "丙氨酸氨基转移酶",
+            "lisItemSname": "ALT",
+            "result": "22",
+            "units": "U/L",
+            "resultRange": "0 - 50",
+            "status": "N",
+            "note": "",
+            "printOrder": "6",
+            "itemNo": "6",
+            "itemImg": "",
+            "criticalValueFlag": "0",
+            "criticalRange": "",
+            "criticalLevel": ""
+          },
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128003",
+            "paritemNo": "EMBIOCHEM",
+            "paritemName": "急诊生化全项",
+            "reportDateTime": "2025-11-28 09:40:00",
+            "specimenNo": "SP20251128003",
+            "lisItemCode": "AST",
+            "lisItemName": "天门冬氨酸氨基转移酶",
+            "lisItemSname": "AST",
+            "result": "18",
+            "units": "U/L",
+            "resultRange": "0 - 40",
+            "status": "N",
+            "note": "",
+            "printOrder": "7",
+            "itemNo": "7",
+            "itemImg": "",
+            "criticalValueFlag": "0",
+            "criticalRange": "",
+            "criticalLevel": ""
+          },
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128003",
+            "paritemNo": "EMBIOCHEM",
+            "paritemName": "急诊生化全项",
+            "reportDateTime": "2025-11-28 09:40:00",
+            "specimenNo": "SP20251128003",
+            "lisItemCode": "TC",
+            "lisItemName": "总胆固醇",
+            "lisItemSname": "TC",
+            "result": "5.6",
+            "units": "mmol/L",
+            "resultRange": "≤5.2",
+            "status": "H",
+            "note": "",
+            "printOrder": "8",
+            "itemNo": "8",
+            "itemImg": "",
+            "criticalValueFlag": "0",
+            "criticalRange": "",
+            "criticalLevel": ""
+          },
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128003",
+            "paritemNo": "EMBIOCHEM",
+            "paritemName": "急诊生化全项",
+            "reportDateTime": "2025-11-28 09:40:00",
+            "specimenNo": "SP20251128003",
+            "lisItemCode": "TG",
+            "lisItemName": "甘油三酯",
+            "lisItemSname": "TG",
+            "result": "1.9",
+            "units": "mmol/L",
+            "resultRange": "≤1.7",
+            "status": "H",
+            "note": "",
+            "printOrder": "9",
+            "itemNo": "9",
+            "itemImg": "",
+            "criticalValueFlag": "0",
+            "criticalRange": "",
+            "criticalLevel": ""
+          },
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128003",
+            "paritemNo": "EMBIOCHEM",
+            "paritemName": "急诊生化全项",
+            "reportDateTime": "2025-11-28 09:40:00",
+            "specimenNo": "SP20251128003",
+            "lisItemCode": "HDL",
+            "lisItemName": "高密度脂蛋白胆固醇",
+            "lisItemSname": "HDL-C",
+            "result": "1.0",
+            "units": "mmol/L",
+            "resultRange": "≥1.0",
+            "status": "N",
+            "note": "",
+            "printOrder": "10",
+            "itemNo": "10",
+            "itemImg": "",
+            "criticalValueFlag": "0",
+            "criticalRange": "",
+            "criticalLevel": ""
+          },
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "LAB20251128003",
+            "paritemNo": "EMBIOCHEM",
+            "paritemName": "急诊生化全项",
+            "reportDateTime": "2025-11-28 09:40:00",
+            "specimenNo": "SP20251128003",
+            "lisItemCode": "LDL",
+            "lisItemName": "低密度脂蛋白胆固醇",
+            "lisItemSname": "LDL-C",
+            "result": "3.4",
+            "units": "mmol/L",
+            "resultRange": "≤3.12",
+            "status": "H",
+            "note": "",
+            "printOrder": "11",
+            "itemNo": "11",
+            "itemImg": "",
+            "criticalValueFlag": "0",
+            "criticalRange": "",
+            "criticalLevel": ""
+          }
+        ]
+      }
+    }
+  }
+,
+{
+  "httpRequest": {
+    "method": "POST",
+    "path": "/case/queryexamine",
+    "body": {
+      "type": "JSON",
+      "json": {
+        "hospitalNo": "4008802503",
+        "patientId": "56345403",
+        "visitId": "1303",
+        "reportNo": ""
+      }
+    }
+  },
+  "httpResponse": {
+    "statusCode": 200,
+    "headers": {
+      "Content-Type": ["application/json; charset=utf-8"]
+    },
+    "body": {
+      "code": 200,
+      "message": "成功",
+      "data": [
+        {
+          "errCode": 0,
+          "errMsg": "OK",
+          "data": {
+            "hospitalNo": "4008802503",
+            "hospitalName": "嘉和医院",
+            "patientName": "陈强",
+            "patientAge": "28",
+            "sex": "男",
+            "reportName": "头颅CT平扫",
+            "checkTime": "2024-11-28 14:20:00",
+            "imageAccNo": "CT2411280035",
+            "reportResult": "双侧大脑半球形态、大小正常，灰白质分界清晰。脑实质密度分布均匀,未见明显异常密度灶。脑室系统形态、大小正常，未见扩大或受压变形。第三脑室、第四脑室及侧脑室未见扩大。基底池、环池、外侧裂池等蛛网膜下腔略显模糊。脑沟、脑裂未见明显增宽或闭塞。中线结构居中，未见移位。小脑半球对称,密度均匀，未见异常密度影。双侧侧脑室旁及半卵圆中心未见明显异常信号。颅骨骨质完整,未见骨折征象。副鼻窦及乳突气化良好。",
+            "reportImpression": "头颅CT平扫未见明显异常。建议：1.细菌性脑膜炎早期CT表现可不明显，建议结合临床症状、脑脊液检查及实验室检查综合判断。2.必要时行头颅MRI增强扫描以明确诊断，MRI对脑膜炎症显示更敏感。3.如有并发症(如脑脓肿、脑积水、脑梗死等)可能，建议复查。",
+            "kdsj": "2024-11-28 14:20:00",
+            "patientId": "0001203",
+            "visitType": "门诊",
+            "visitDept": "神经内科",
+            "visitDateTime": "2024-11-28 13:30:00",
+            "checkNo": "1303001",
+            "clinSymp": "反复发作性头痛，视物模糊",
+            "reportDateTime": "2024-11-28 15:40:00",
+            "reportDoctor": "孙放射",
+            "reviewDoctor": "周教授",
+            "clinicDiagnosis": "偏头痛",
+            "bedLabel": "",
+            "requestDoctor": "陈内",
+            "reportClass": "CT",
+            "examMethodName": "头颅CT平扫",
+            "reqDept": "放射科",
+            "msrNo": "",
+            "partFirstClassName": "颅脑",
+            "noteInfo": "排除器质性病变",
+            "electronicHealthCard": "00013003",
+            "visitNo": "00013003",
+            "diagnosis": "偏头痛，排除颅内感染",
+            "spcmReceivedDateTime": "2024-11-28 14:10:00",
+            "labPerformedTime": "2024-11-28 14:20:00"
+          }
+        }
+      ],
+      "executeTime": 0,
+      "timestamp": "2024-11-28 15:40:18"
+    }
+  }
+},
+{
+  "httpRequest": {
+    "method": "POST",
+    "path": "/case/queryexamine",
+    "body": {
+      "type": "JSON",
+      "json": {
+        "hospitalNo": "4008802502",
+        "patientId": "56345402",
+        "visitId": "1302",
+        "reportNo": ""
+      }
+    }
+  },
+  "httpResponse": {
+    "statusCode": 200,
+    "headers": {
+      "Content-Type": ["application/json; charset=utf-8"]
+    },
+    "body": {
+      "code": 200,
+      "message": "成功",
+      "data": [
+        {
+          "errCode": 0,
+          "errMsg": "OK",
+          "data": {
+            "hospitalNo": "4008802502",
+            "hospitalName": "嘉和医院",
+            "patientName": "李红",
+            "patientAge": "32",
+            "sex": "女",
+            "reportName": "头颅CT平扫",
+            "checkTime": "2024-11-28 10:15:00",
+            "imageAccNo": "CT2411280022",
+            "reportResult": "双侧大脑半球形态、大小正常，灰白质分界清晰。脑实质密度分布均匀,未见明显异常密度灶。脑室系统形态、大小正常，未见扩大或受压变形。第三脑室、第四脑室及侧脑室未见扩大。基底池、环池、外侧裂池等蛛网膜下腔略显模糊。脑沟、脑裂未见明显增宽或闭塞。中线结构居中，未见移位。小脑半球对称,密度均匀，未见异常密度影。双侧侧脑室旁及半卵圆中心未见明显异常信号。颅骨骨质完整,未见骨折征象。副鼻窦及乳突气化良好。",
+            "reportImpression": "头颅CT平扫未见明显异常。建议：1.细菌性脑膜炎早期CT表现可不明显，建议结合临床症状、脑脊液检查及实验室检查综合判断。2.必要时行头颅MRI增强扫描以明确诊断，MRI对脑膜炎症显示更敏感。3.如有并发症(如脑脓肿、脑积水、脑梗死等)可能，建议复查。",
+            "kdsj": "2024-11-28 10:15:00",
+            "patientId": "0001202",
+            "visitType": "门诊",
+            "visitDept": "神经内一科",
+            "visitDateTime": "2024-11-28 09:00:00",
+            "checkNo": "1302001",
+            "clinSymp": "持续性头痛，畏光，恶心呕吐",
+            "reportDateTime": "2024-11-28 11:30:00",
+            "reportDoctor": "王医生",
+            "reviewDoctor": "赵主任",
+            "clinicDiagnosis": "头痛",
+            "bedLabel": "",
+            "requestDoctor": "李固",
+            "reportClass": "CT",
+            "examMethodName": "头颅CT平扫",
+            "reqDept": "放射科",
+            "msrNo": "",
+            "partFirstClassName": "颅脑",
+            "noteInfo": "建议行腰椎穿刺检查明确诊断",
+            "electronicHealthCard": "00013002",
+            "visitNo": "00013002",
+            "diagnosis": "颅内感染待查",
+            "spcmReceivedDateTime": "2024-11-28 10:05:00",
+            "labPerformedTime": "2024-11-28 10:15:00"
+          }
+        }
+      ],
+      "executeTime": 0,
+      "timestamp": "2024-11-28 11:30:45"
+    }
+  }
+}]
