@@ -13,7 +13,6 @@ services:
       - ./config:/config
       - ./libs:/libs
     command: -logLevel INFO
-
   admin:
     build: 
       context: ./backend

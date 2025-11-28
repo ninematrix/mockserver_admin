@@ -1,0 +1,69 @@
+{
+  "httpRequest": {
+    "method": "POST",
+    "path": "/case/queryexamine",
+    "body": {
+      "type": "JSON",
+      "json": {
+        "hospitalNo": "4008802503",
+        "patientId": "56345403",
+        "visitId": "1303",
+        "reportNo": ""
+      }
+    }
+  },
+  "httpResponse": {
+    "statusCode": 200,
+    "headers": {
+      "Content-Type": ["application/json; charset=utf-8"]
+    },
+    "body": {
+      "code": 200,
+      "message": "成功",
+      "data": [
+        {
+          "errCode": 0,
+          "errMsg": "OK",
+          "data": {
+            "hospitalNo": "4008802503",
+            "hospitalName": "嘉和医院",
+            "patientName": "陈强",
+            "patientAge": "28",
+            "sex": "男",
+            "reportName": "头颅CT平扫",
+            "checkTime": "2024-11-28 14:20:00",
+            "imageAccNo": "CT2411280035",
+            "reportResult": "双侧大脑半球形态、大小正常，灰白质分界清晰。脑实质密度分布均匀,未见明显异常密度灶。脑室系统形态、大小正常，未见扩大或受压变形。第三脑室、第四脑室及侧脑室未见扩大。基底池、环池、外侧裂池等蛛网膜下腔略显模糊。脑沟、脑裂未见明显增宽或闭塞。中线结构居中，未见移位。小脑半球对称,密度均匀，未见异常密度影。双侧侧脑室旁及半卵圆中心未见明显异常信号。颅骨骨质完整,未见骨折征象。副鼻窦及乳突气化良好。",
+            "reportImpression": "头颅CT平扫未见明显异常。建议：1.细菌性脑膜炎早期CT表现可不明显，建议结合临床症状、脑脊液检查及实验室检查综合判断。2.必要时行头颅MRI增强扫描以明确诊断，MRI对脑膜炎症显示更敏感。3.如有并发症(如脑脓肿、脑积水、脑梗死等)可能，建议复查。",
+            "kdsj": "2024-11-28 14:20:00",
+            "patientId": "0001203",
+            "visitType": "门诊",
+            "visitDept": "神经内科",
+            "visitDateTime": "2024-11-28 13:30:00",
+            "checkNo": "1303001",
+            "clinSymp": "反复发作性头痛，视物模糊",
+            "reportDateTime": "2024-11-28 15:40:00",
+            "reportDoctor": "孙放射",
+            "reviewDoctor": "周教授",
+            "clinicDiagnosis": "偏头痛",
+            "bedLabel": "",
+            "requestDoctor": "陈内",
+            "reportClass": "CT",
+            "examMethodName": "头颅CT平扫",
+            "reqDept": "放射科",
+            "msrNo": "",
+            "partFirstClassName": "颅脑",
+            "noteInfo": "排除器质性病变",
+            "electronicHealthCard": "00013003",
+            "visitNo": "00013003",
+            "diagnosis": "偏头痛，排除颅内感染",
+            "spcmReceivedDateTime": "2024-11-28 14:10:00",
+            "labPerformedTime": "2024-11-28 14:20:00"
+          }
+        }
+      ],
+      "executeTime": 0,
+      "timestamp": "2024-11-28 15:40:18"
+    }
+  }
+}

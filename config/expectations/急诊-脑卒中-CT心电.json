@@ -1,0 +1,143 @@
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/er/Exam/getCheckList",
+      "body": {
+        "type": "JSON",
+        "json": {
+          "deptCode": "3201",
+          "patientNo": "BA20250001",
+          "inHospNo": "ZY202500123",
+          "visitsNum": "1"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": ["application/json; charset=utf-8"]
+      },
+      "body": {
+        "code": "200",
+        "msg": "成功",
+        "data": [
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "CT20251128001",
+            "reportName": "头颅CT平扫报告",
+            "reportDate": "2025-11-28 10:32:00",
+            "reportStatus": "F",
+            "itemCode": "CTHEADNC",
+            "itemName": "头颅CT平扫",
+            "applyDoctor": "李强",
+            "applyDept": "神经内科",
+            "applyDate": "2025-11-28 09:55:00",
+            "examinationDoctor": "王锋",
+            "examinationDept": "放射科",
+            "examinationDate": "2025-11-28 10:10:00",
+            "reviewDoctor": "赵明",
+            "orderCode": "ORD20251128001",
+            "reportMemo": "急性脑卒中疑诊，需结合临床及后续影像随访。"
+          },
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "ECG20251128002",
+            "reportName": "12导联心电图报告",
+            "reportDate": "2025-11-28 09:40:00",
+            "reportStatus": "F",
+            "itemCode": "ECG12",
+            "itemName": "十二导联心电图",
+            "applyDoctor": "李强",
+            "applyDept": "神经内科",
+            "applyDate": "2025-11-28 09:20:00",
+            "examinationDoctor": "周蕾",
+            "examinationDept": "心电图室",
+            "examinationDate": "2025-11-28 09:30:00",
+            "reviewDoctor": "陈伟",
+            "orderCode": "ORD20251128002",
+            "reportMemo": "心律失常，建议心内科会诊及抗凝风险评估。"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/er/Exam/getCheckDetail",
+      "body": {
+        "type": "JSON",
+        "json": {
+          "deptCode": "3201",
+          "applyNo": "CT20251128001",
+          "itemCode": "CTHEADNC"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": ["application/json; charset=utf-8"]
+      },
+      "body": {
+        "code": "200",
+        "msg": "成功",
+        "data": [
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "CT20251128001",
+            "itemCode": "CTHEADNC",
+            "itemName": "头颅CT平扫",
+            "examinationResult": "平扫示：右侧大脑中动脉供血区可见大片状低密度影，边界尚不清，右侧脑沟变浅，脑室系统轻度受压，左向中线结构约2mm移位。未见明显颅内出血高密度影。颅骨形态及密度未见明显异常。",
+            "examinationFinding": "1. 右侧大脑中动脉供血区急性/亚急性脑梗死可能性大。\n2. 轻度脑水肿及轻度中线结构左偏。\n建议结合临床症状、MRI及随访影像进一步评估。",
+            "viewSite": "http://pacs.example.com/viewer?study=CT20251128001",
+            "examinationMemo": "急性脑卒中疑诊，已通知床旁医师评估溶栓/介入治疗适应证。"
+          }
+        ]
+      }
+    }
+  },
+  {
+    "httpRequest": {
+      "method": "POST",
+      "path": "/er/Exam/getCheckDetail",
+      "body": {
+        "type": "JSON",
+        "json": {
+          "deptCode": "3201",
+          "applyNo": "ECG20251128002",
+          "itemCode": "ECG12"
+        }
+      }
+    },
+    "httpResponse": {
+      "statusCode": 200,
+      "headers": {
+        "Content-Type": ["application/json; charset=utf-8"]
+      },
+      "body": {
+        "code": "200",
+        "msg": "成功",
+        "data": [
+          {
+            "patientNo": "BA20250001",
+            "inHospNo": "ZY202500123",
+            "visitsNum": "1",
+            "applyNo": "ECG20251128002",
+            "itemCode": "ECG12",
+            "itemName": "十二导联心电图",
+            "examinationResult": "心电图示：基线可见细小f波，P波未见清晰形成，各导联R-R间期明显不规则，心室率约90次/分，QRS 波群形态及时限基本正常，ST-T 未见明显动态性改变。",
+            "examinationFinding": "心房颤动（房颤），心室率控制尚可。\n未见急性心肌缺血明确证据。",
+            "viewSite": "http://pacs.example.com/ecg/view?study=ECG20251128002",
+            "examinationMemo": "房颤为脑卒中危险因素之一，建议心内科会诊，评估抗凝及心率控制治疗方案。"
+          }
+        ]
+      }
+    }
+  }
