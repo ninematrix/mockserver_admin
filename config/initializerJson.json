@@ -3,13 +3,12 @@
   {
     "httpRequest": {
       "method": "POST",
-      "path": "/yxhis/Exam/getLISList",
+      "path": "/yxhis/Exam/getLISList",    
       "body": {
         "type": "JSON",
+        "matchType": "ONLY_MATCHING_FIELDS",
         "json": {
-          "beginDate": "2024-01-01",
-          "patCardNo": "513030196105293814",
-          "endDate": "2024-12-31"
+          "patCardNo": "513030196105293814"
         }
       }
     },

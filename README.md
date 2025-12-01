@@ -47,14 +47,6 @@
 * 前端页面
 * 自动 merge 初始化文件
 
-### ✔ **覆盖医院常见科室接口模拟**
-
-包括但不限于：
-
-* LIS：血常规、凝血、生化、大项小项、检验详情
-* Check：CT、MRI、心电图、超声、检查所见/诊断
-* Emergency：急诊血常规、急诊凝血、急诊生化等
-
 ---
 
 ## 3. 项目结构 Project Structure
@@ -72,11 +64,11 @@ mockserver-admin/
 │
 ├── config/                 # MockServer 初始化配置
 │   ├── expectations/       # 按模块拆分的 expectations（手工维护）
-│   │   ├── lis_list.json
-│   │   ├── lis_detail.json
-│   │   ├── check_list.json
-│   │   ├── check_detail.json
-│   │   ├── emergency_labs.json
+│   │   ├── yxhis.json
+│   │   ├── 彩超报告.json
+│   │   ├── 急诊-脑卒中-CT心电.json
+│   │   ├── 急诊-脑卒中-检验.json
+│   │   ├── 神内门诊-头颅CT平扫.json
 │   │   └── ...
 │   └── initializerJson.json  # merge.sh 自动生成，不要手写！
 │
@@ -84,6 +76,7 @@ mockserver-admin/
 ├── README.md
 ├── merge.sh              # 多文件 → initializerJson.json 合并脚本
 ├── rebuild.sh            # 本机rebuil mockserver-admin镜像
+├── redeploy.sh           # 本机重新发布测试用的json
 └── ...（日志/脚本/其他工具）
 ```
 
@@ -109,33 +102,30 @@ cd mockserver-admin
 
 ---
 
-### **1️⃣ 合并 Expectation 到 initializerJson.json**
+### **合并 Expectation 到 initializerJson.json并启动**
 
 ```sh
-./config/merge.sh
+./redeploy.sh
 ```
 
-成功后会生成：
-
-```
-config/initializerJson.json
-```
+成功后会进入log监控状态：
 
 ---
 
-### **2️⃣ 启动 MockServer + 管理后台**
+### **测试接口**
 
 ```sh
-docker compose up -d
+curl -s -X POST "http://localhost:1080/yxhis/Exam/getLISList" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "beginDate": "2024-01-01",
+    "patCardNo": "513030196105293814",
+    "endDate": "2024-12-31"
+  }' | jq .
+
 ```
 
-查看服务状态：
-
-```sh
-docker ps
-```
-
-访问前端 UI：
+### **访问前端 UI**
 
 ```
 http://localhost:3000
@@ -146,6 +136,8 @@ MockServer API：
 ```
 http://localhost:1080
 ```
+
+远程访问时将上述localhost改为主机IP地址
 
 ---
 
@@ -171,7 +163,6 @@ docker compose restart
 
 ---
 
-## 
 ## Expectation 维护说明
 
 MockServer 的所有接口模拟逻辑均由 *Expectation* 定义。
@@ -182,15 +173,15 @@ MockServer 的所有接口模拟逻辑均由 *Expectation* 定义。
 项目中的 Expectation 文件按功能模块拆分存放：
 
 ```
-config/
-  expectations/
-    lis_list.json
-    lis_detail.json
-    check_list.json
-    check_detail.json
-    emergency_labs.json
-    ...
-  initializerJson.json     ← 合并生成结果（勿手动编辑）
+├── config/                 # MockServer 初始化配置
+│   ├── expectations/       # 按模块拆分的 expectations（手工维护）
+│   │   ├── yxhis.json
+│   │   ├── 彩超报告.json
+│   │   ├── 急诊-脑卒中-CT心电.json
+│   │   ├── 急诊-脑卒中-检验.json
+│   │   ├── 神内门诊-头颅CT平扫.json
+│   │   └── ...
+│   └── initializerJson.json  # merge.sh 自动生成，不要手写！
   ```
 
 * **`expectations/*.json`**
@@ -241,28 +232,50 @@ config/
 
 两种形式均可在自动合并时被正确展开并加入最终 initializerJson.json。
 
+### **匹配方式**
+
+默认为完全匹配所有参数，如果只匹配某个参数，可使用`"matchType": "ONLY_MATCHING_FIELDS"`，参考下例。当传入参数中只需要有该参数及值，即可匹配。
+
+```json
+  "httpRequest": {
+      "method": "POST",
+      "path": "/yxhis/Exam/getLISList",    
+      "body": {
+        "type": "JSON",
+        "matchType": "ONLY_MATCHING_FIELDS",
+        "json": {
+          "patCardNo": "513030196105293814"
+        }
+      }
+    },
+```
+
+以下方式，只要传入的参数中有`patCartNo`即可匹配。
+
+```json
+"body": {
+  "jsonPath": "$.patCardNo"
+}
+```
+
+其它更多匹配方式，请查阅 [mockserver文档](https://www.mock-server.com/mock_server/creating_expectations.html)
+
 ---
+
 ### 3. 文件命名规范
 
 建议以接口或业务模块为粒度命名：
 
-* `lis_list.json`
-* `lis_detail.json`
-* `emergency_labs.json`
-* `check_list.json`
-* `check_detail.json`
-* `ecg.json`
-* `ct.json`
 
 命名要求：
 
-1. 全小写
-2. 使用下划线分词
-3. 按业务模块分类，保证文件内容独立
+1. 使用下划线分词
+2. 按业务模块分类，保证文件内容独立
 
 这样便于后期定位并维护某条接口的 expectation。
 
 ---
+
 ### 4. 自动合并机制
 
 所有 `expectations/*.json` 会在构建或启动服务前被合并为：
@@ -274,7 +287,7 @@ config/initializerJson.json
 由脚本：
 
 ```
-config/merge.sh
+merge.sh
 ```
 
 负责完成。
@@ -299,6 +312,7 @@ config/merge.sh
 MockServer 容器启动时读取该文件并自动加载所有 expectation。
 
 ---
+
 ### 5. 维护流程
 
 ### **新增 Expectation**
@@ -311,28 +325,20 @@ MockServer 容器启动时读取该文件并自动加载所有 expectation。
 
 2. 写入一条或多条 Expectation
 
-3. 执行脚本进行合并：
+3. 重新启动 mockserver：
 
    ```sh
-   ./config/merge.sh
-   ```
-
-4. 重新启动 mockserver：
-
-   ```sh
-   docker compose down
-   docker compose up -d
+   ./redeploy.sh
    ```
 
 ---
 
 ### **修改 Expectation**
 
-直接编辑对应的 JSON 文件（如 `lis_detail.json`），然后重复：
+直接编辑对应的 JSON 文件，然后重复：
 
 ```sh
-./config/merge.sh
-docker compose restart mockserver
+./redeploy.sh
 ```
 
 ---
@@ -342,11 +348,11 @@ docker compose restart mockserver
 删除目标 JSON 文件或其中的条目，重新执行：
 
 ```sh
-./config/merge.sh
-docker compose restart mockserver
+./redeploy.sh
 ```
 
 ---
+
 ### 6. 常见注意事项
 
 * ❗ **不要直接编辑 `initializerJson.json`**
@@ -407,20 +413,6 @@ docker compose restart mockserver
 
 ---
 
-## 8. REST API（MockServer 管理后台）
-
-后端公开 REST APIs 用于：
-
-* 添加 Expectation
-* 删除单个 Expectation
-* 删除全部 Expectations
-* 查询近期请求日志
-* 检查 MockServer 启动状态
-
-（如需我可生成完整接口文档）
-
----
-
 ## 9. 前端 UI 使用说明
 
 * 可视化展示所有已注册 Expectations
@@ -440,22 +432,21 @@ docker compose restart mockserver
 你忘记执行：
 
 ```sh
-./merge.sh
-docker compose restart mockserver
+./redeploy.sh
 ```
 
 ---
 
 ### ❓ 为什么我在UI中修改了 expectations，不生效？
 
-UI中对expectations的修改只对当前有效，重启mockserver后会丢失，如果需要修改，按expectation的维护进行。
+UI中对expectations的修改**只对当前有效**，重启mockserver后会丢失，如果需要修改，按expectation的维护进行。
 
 ---
 
 ### ❓ initializerJson.json 可以手动改吗？
 
 不能。
-该文件自动生成，每次 merge.sh 都会覆盖。
+该文件自动生成，每次 merge.sh / redeploy.sh都会覆盖。
 
 ---
 
