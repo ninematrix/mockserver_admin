@@ -259,15 +259,7 @@ async function fetchExpectations() {
       <td>${method}</td>
       <td>${path}</td>
       <td>${statusCode}</td>
-      <td>
-        <button
-          data-method="${method}"
-          data-path="${path}"
-          class="btn-danger btn-del"
-        >
-          删除
-        </button>
-
+      <td> 
         <details style="margin-top:4px;">
           <summary>请求 Body</summary>
           ${renderCollapsibleBody(requestBodyText, 20)}
@@ -277,6 +269,15 @@ async function fetchExpectations() {
           <summary>响应 Body</summary>
           ${renderCollapsibleBody(responseBodyText, 20)}
         </details>
+      </td>
+      <td>
+        <button
+          data-method="${method}"
+          data-path="${path}"
+          class="btn-danger btn-del"
+        >
+          删除
+        </button>
       </td>
     `;
 
